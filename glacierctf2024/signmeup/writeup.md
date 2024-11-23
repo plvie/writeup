@@ -40,13 +40,13 @@ The idea is to find get multiple signature and construct a matrix for this equat
 ```
 s = h * a + r mod l
 ```
-where `s` is the signature, `h` is H(R || A || m), `a` is the secret scalar, `r` is H(prefix || m) and `l` is the order of the curve.
 
 We can rewrite this equation like this :
 ```
 ri = si - hi * a mod l
 ```
-where a is the secret scalar we want to find, si is the signature and hi is H(R || A || m) for the i-th signature and ri is unknown.
+where `ri` is a unknown scalar < 2**160, `si` is the signature, `hi` is H(R || A || m_i) and can be computed, `l` is the order of the curve
+and `a` is the secret scalar. I put i for the i-th message signed.
 
 The matrix is like this :
 ```
